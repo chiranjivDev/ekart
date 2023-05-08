@@ -1,0 +1,14 @@
+{
+  "name": "e-kart",
+  "version": "1.0.0",
+  "description": "MERN Shopping Cart app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
