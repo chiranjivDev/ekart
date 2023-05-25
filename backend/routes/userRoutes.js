@@ -1,6 +1,6 @@
 import express from 'express';
 const router=express.Router();
-import {login, getUserProfile, register, updateUserProfile, getUsers} from '../controllers/userController.js';
+import {login, getUserProfile, register, updateUserProfile, getUsers, deleteUser, getUserById, updateUser} from '../controllers/userController.js';
 import protect, {isAdmin} from '../middleware/authMiddleware.js';
 
 
@@ -16,5 +16,10 @@ router
 router.route('/profile')
     .get(protect, getUserProfile)
     .put(protect, updateUserProfile)
+
+router.route('/:id')
+    .get(protect, isAdmin, getUserById)
+    .delete(protect, isAdmin,  deleteUser)
+    .put(protect, isAdmin, updateUser)
 
 export default router;
